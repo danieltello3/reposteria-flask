@@ -28,7 +28,7 @@ app = Flask(__name__)
 app.register_blueprint(swagger_blueprint)
 api = Api(app)
 # dialect://username:password@host:port/database
-app.config['SQLALCHEMY_DATABASE_URI'] = environ.get("JAWSDB_URL")
+app.config['SQLALCHEMY_DATABASE_URI'] = environ.get("DATABASE_URI")
 # si se establece en TRUE, Flask-SQLAlchemy rastreara las modificaciones de los objetos y lanzara señales. su valor predeterminado es None, igual habilita el tracking pero emite una advertencia que se deshabilitara de manera prederminada en futuras versiones. esto consume memoria adicional y si no se va a utilzar es mejor desactivarlo (false)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 base_de_datos.init_app(app)
