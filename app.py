@@ -37,9 +37,8 @@ base_de_datos.init_app(app)
 # crea todas las tablas defininads en los modelos del proyecto
 base_de_datos.create_all(app=app)
 
-app.route("/")
 
-
+@app.route("/")
 def initial_controller():
     return {
         "message": "Bienvenido a mi API de recetas de postres 🎂"
